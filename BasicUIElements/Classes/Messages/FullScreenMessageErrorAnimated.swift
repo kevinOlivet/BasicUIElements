@@ -1,5 +1,5 @@
 //
-//  FullScreenMessageError.swift
+//  FullScreenMessageErrorAnimated.swift
 //  UIElements
 //
 //  Copyright © 2019 Jon Olivet
@@ -23,7 +23,7 @@ public class FullScreenMessageErrorAnimated: UIView {
         label.tag = 10_001
         label.textColor = UITheme.Style.Colors.GrisAzulado.level0
         label.isAccessibilityElement = true
-        label.accessibilityIdentifier = "FullScreenMessageError.title"
+        label.accessibilityIdentifier = "FullScreenMessageErrorAnimated.title"
         return label
 
     }()
@@ -38,7 +38,7 @@ public class FullScreenMessageErrorAnimated: UIView {
         label.tag = 10_002
         label.textColor = UITheme.Style.Colors.GrisAzulado.level1
         label.isAccessibilityElement = true
-        label.accessibilityIdentifier = "FullScreenMessageError.message"
+        label.accessibilityIdentifier = "FullScreenMessageErrorAnimated.message"
         return label
 
     }()
@@ -64,7 +64,7 @@ public class FullScreenMessageErrorAnimated: UIView {
         label.textColor = UITheme.Style.Colors.GrisAzulado.level0
         label.tag = 10_004
         label.isAccessibilityElement = true
-        label.accessibilityIdentifier = "FullScreenMessageError.bottomMessage"
+        label.accessibilityIdentifier = "FullScreenMessageErrorAnimated.bottomMessage"
         return label
 
     }()
@@ -238,12 +238,12 @@ public class FullScreenMessageErrorAnimated: UIView {
 
     public func addAccesibilityIdentifierForAllElements(withIdentifier identifier: String) {
 
-        titleLabel.accessibilityIdentifier = "\(identifier).FullScreenMessageError.TitleLabel"
-        messageLabel.accessibilityIdentifier = "\(identifier).FullScreenMessageError.MessageLabel"
-        animationHolder.accessibilityIdentifier = "\(identifier).FullScreenMessageError.ImageView"
+        titleLabel.accessibilityIdentifier = "\(identifier).FullScreenMessageErrorAnimated.TitleLabel"
+        messageLabel.accessibilityIdentifier = "\(identifier).FullScreenMessageErrorAnimated.MessageLabel"
+        animationHolder.accessibilityIdentifier = "\(identifier).FullScreenMessageErrorAnimated.ImageView"
 
         for (index, view) in stackView.arrangedSubviews.enumerated() {
-            view.accessibilityIdentifier = "\(identifier).FullScreenMessageError.Button\(index)"
+            view.accessibilityIdentifier = "\(identifier).FullScreenMessageErrorAnimated.Button\(index)"
         }
     }
 }

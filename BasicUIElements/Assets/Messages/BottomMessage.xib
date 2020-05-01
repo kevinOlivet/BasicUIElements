@@ -16,7 +16,7 @@
         </array>
     </customFonts>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BottomMessage" customModule="UIElements" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BottomMessage" customModule="BasicUIElements" customModuleProvider="target">
             <connections>
                 <outlet property="background" destination="iN0-l3-epB" id="YaE-YH-tCF"/>
                 <outlet property="bottomMessageBoxConstraint" destination="dLt-aD-f8B" id="AP1-Rk-UlJ"/>
@@ -43,10 +43,10 @@
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="srO-xm-M42" userLabel="Message Box Background">
-                    <rect key="frame" x="0.0" y="251" width="375" height="416"/>
+                    <rect key="frame" x="0.0" y="233" width="375" height="434"/>
                     <subviews>
                         <view contentMode="scaleToFill" layoutMarginsFollowReadableWidth="YES" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X7H-OL-mEZ">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="416"/>
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="434"/>
                             <subviews>
                                 <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5oI-m8-fPE">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="115"/>
@@ -118,7 +118,7 @@
                                 <constraint firstItem="rXh-93-lUI" firstAttribute="leading" secondItem="X7H-OL-mEZ" secondAttribute="leading" constant="20" id="DYJ-TW-67g"/>
                                 <constraint firstItem="5oI-m8-fPE" firstAttribute="top" secondItem="X7H-OL-mEZ" secondAttribute="top" id="GFV-0D-yyk"/>
                                 <constraint firstItem="jGm-fC-Sdv" firstAttribute="leading" secondItem="X7H-OL-mEZ" secondAttribute="leading" constant="20" id="K6O-lC-9de"/>
-                                <constraint firstAttribute="bottom" secondItem="jGm-fC-Sdv" secondAttribute="bottom" constant="22" id="LqO-jb-03H"/>
+                                <constraint firstAttribute="bottom" secondItem="jGm-fC-Sdv" secondAttribute="bottom" constant="40" id="LqO-jb-03H"/>
                                 <constraint firstItem="8ef-Yg-0dd" firstAttribute="top" secondItem="rXh-93-lUI" secondAttribute="bottom" constant="15" id="Myz-en-9Wn"/>
                                 <constraint firstAttribute="trailing" secondItem="rXh-93-lUI" secondAttribute="trailing" constant="20" id="OMS-tF-IaW"/>
                                 <constraint firstItem="8ef-Yg-0dd" firstAttribute="leading" secondItem="rXh-93-lUI" secondAttribute="leading" id="Q4a-rF-vrE"/>

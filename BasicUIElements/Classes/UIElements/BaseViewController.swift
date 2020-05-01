@@ -48,10 +48,11 @@ open class BaseViewController: UIViewController {
         super.viewDidLoad()
         edgesForExtendedLayout = .all
         setNeedsStatusBarAppearanceUpdate()
+        backgroundGradient()
     }
 
     open func backgroundGradient() {
-        let gradient = MainGradientView.blueOnly.gradientLayer
+        let gradient = MainGradientView.whiteToBlue.gradientLayer
         gradient.frame = UIScreen.main.bounds
         self.view.layer.insertSublayer(gradient, at: 0)
     }

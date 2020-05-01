@@ -92,3 +92,5 @@ pod_selector(pods_environment)
     inherit! :search_paths
   end
 end
+
+use_modular_headers!
