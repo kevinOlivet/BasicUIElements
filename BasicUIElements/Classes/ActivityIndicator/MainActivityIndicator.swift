@@ -35,8 +35,6 @@ open class MainActivityIndicator: UIView {
         self.logoContainer?.backgroundColor = .white
         self.logoContainer?.translatesAutoresizingMaskIntoConstraints = false
 
-        //self.logoContainer?.hero.id = "ViewContainer"
-
         self.titleLabel = UILabel()
         self.titleLabel?.translatesAutoresizingMaskIntoConstraints = false
         self.titleLabel?.font = UIFont.main_semiBoldFont(withSize: 18)

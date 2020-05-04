@@ -60,8 +60,8 @@ open class BaseViewController: UIViewController {
     open func genericDisplayLoadingView(viewModel: ActivityIndicatorViewModel? = nil) {
 
         loadingView = MainActivityIndicator(
-            title: viewModel?.title ?? "Loading",
-            detail: viewModel?.detail ?? "Wait a moment",
+            title: viewModel?.title ?? "LOADING".localized,
+            detail: viewModel?.detail ?? "WAIT".localized,
             showHeader: false
         )
 
@@ -125,15 +125,23 @@ open class BaseViewController: UIViewController {
         guard errorMessage == nil else {
             return
         }
-        var title: String { typeOfError == .internet ? "Internet Error" : "Service Error" }
-        var message: String { typeOfError == .internet ? "Please check your connection and try again." : "We are experiencing a momentary problem. \nPlease try again." }
+        var title: String {
+            typeOfError == .internet
+                ? "INTERNET_ERROR_TITLE".localized
+                : "SERVICE_ERROR_TITLE".localized
+        }
+        var message: String {
+            typeOfError == .internet
+                ? "INTERNET_ERROR_MESSAGE".localized
+                : "SERVICE_ERROR_MESSAGE".localized
+        }
         let animationView = createAnimationView(typeOfError)
 
         errorMessage = FullScreenMessageErrorAnimated(
             withTitle: title,
             message: message,
             animationView: animationView,
-            buttonsTitles: ["Retry", "Close"],
+            buttonsTitles: ["RETRY".localized, "CLOSE".localized],
             buttonsActions: [retryAction, closeAction],
             buttonsStyles: [UIButton.ButtonTypes.first, UIButton.ButtonTypes.second],
             target: self,

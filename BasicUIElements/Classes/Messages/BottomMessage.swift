@@ -131,7 +131,7 @@ open class BottomMessage: UIView {
             )
         } else {
             firstButton.removeFromSuperview()
-            secondButtonTitle = "ENTENDIDO".localized
+            secondButtonTitle = "UNDERSTOOD".localized
             secondButtonStyle = .basic
         }
 
