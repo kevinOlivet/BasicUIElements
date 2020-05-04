@@ -1,9 +1,8 @@
 # BasicUIElements
 
-[![CI Status](https://img.shields.io/travis/kevinOlivet/BasicUIElements.svg?style=flat)](https://travis-ci.org/kevinOlivet/BasicUIElements)
-[![Version](https://img.shields.io/cocoapods/v/BasicUIElements.svg?style=flat)](https://cocoapods.org/pods/BasicUIElements)
-[![License](https://img.shields.io/cocoapods/l/BasicUIElements.svg?style=flat)](https://cocoapods.org/pods/BasicUIElements)
-[![Platform](https://img.shields.io/cocoapods/p/BasicUIElements.svg?style=flat)](https://cocoapods.org/pods/BasicUIElements)
+This module serves a similar purpose to BasicCommons except that it holds the visual elements.
+Assets, reusable nibs, buttons, colors, fonts are defined and standardized here.
+This enforces the themes of the UI team.  For example, no team should come up with their own original color.  Swiftlint can show a compile time warning if they try.
 
 ## Example
 
