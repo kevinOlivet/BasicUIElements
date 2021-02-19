@@ -2,7 +2,7 @@
 //  UIView+Extension.swift
 //  UIElements
 //
-//  Copyright © 2019 Jon Olivet
+//  Copyright © Jon Olivet
 //
 
 //swiftlint:disable function_default_parameter_at_end

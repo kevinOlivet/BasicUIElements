@@ -2,7 +2,7 @@
 //  MainGradientView.swift
 //  BasicUIElements
 //
-//  Copyright © 2019 Jon Olivet
+//  Copyright © Jon Olivet
 //
 
 //swiftlint:disable missing_docs

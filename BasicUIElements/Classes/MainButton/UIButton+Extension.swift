@@ -2,7 +2,7 @@
 //  UIButton+Extension.swift
 //  UIElements
 //
-//  Copyright © 2019 Jon Olivet
+//  Copyright © Jon Olivet
 //
 
 //swiftlint:disable cyclomatic_complexity

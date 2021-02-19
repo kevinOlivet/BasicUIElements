@@ -2,7 +2,7 @@
 //  UITheme+Extension.swift
 //  UIElements
 //
-//  Copyright © 2019 Jon Olivet
+//  Copyright © Jon Olivet
 //
 
 // swiftlint:disable uitheme_not_UIColor missing_docs nesting

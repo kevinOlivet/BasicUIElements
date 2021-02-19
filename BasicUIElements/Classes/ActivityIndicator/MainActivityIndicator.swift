@@ -2,7 +2,7 @@
 //  MainActivityIndicator.swift
 //  UIElements
 //
-//  Copyright © 2019 Jon Olivet
+//  Copyright © Jon Olivet
 //
 
 import BasicCommons
