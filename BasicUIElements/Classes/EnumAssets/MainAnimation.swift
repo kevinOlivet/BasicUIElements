@@ -14,6 +14,7 @@ public enum MainAnimation: String, CaseIterable {
     case welcome = "welcome"
     case internetError = "internet_error"
     case serviceError = "service_error"
+    case successCheckMark = "success_check_mark"
     case iconCheck = "icon_check"
 
     public var lottieAnimationView: AnimationView {

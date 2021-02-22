@@ -49,6 +49,7 @@ open class BaseViewController: UIViewController {
         edgesForExtendedLayout = .all
         setNeedsStatusBarAppearanceUpdate()
         backgroundGradient()
+        hideKeyboardWhenTappedAround()
     }
 
     open func backgroundGradient() {
@@ -126,14 +127,24 @@ open class BaseViewController: UIViewController {
             return
         }
         var title: String {
-            typeOfError == .internet
-                ? "INTERNET_ERROR_TITLE".localized
-                : "SERVICE_ERROR_TITLE".localized
+            switch typeOfError {
+            case .internet:
+                return "INTERNET_ERROR_TITLE".localized
+            case .service:
+                return "SERVICE_ERROR_TITLE".localized
+            case .tooManyRequests:
+                return "TOO_MANY_REQUESTS_TITLE".localized
+            }
         }
         var message: String {
-            typeOfError == .internet
-                ? "INTERNET_ERROR_MESSAGE".localized
-                : "SERVICE_ERROR_MESSAGE".localized
+            switch typeOfError {
+            case .internet:
+                return "INTERNET_ERROR_MESSAGE".localized
+            case .service:
+                return "SERVICE_ERROR_MESSAGE".localized
+            case .tooManyRequests:
+                return "TOO_MANY_REQUESTS_MESSAGE".localized
+            }
         }
         let animationView = createAnimationView(typeOfError)
 
@@ -166,6 +177,8 @@ open class BaseViewController: UIViewController {
                 return MainAnimation.internetError
             case .service:
                 return MainAnimation.serviceError
+            case .tooManyRequests:
+                return MainAnimation.serviceError
             }
         }()
         let view = animation.lottieAnimationView
@@ -178,9 +191,54 @@ open class BaseViewController: UIViewController {
         errorMessage = nil
     }
 
+    open func genericDisplaySuccessView(title: String, message: String, closeAction: Selector) {
+        guard errorMessage == nil else {
+            return
+        }
+
+        let animationView = MainAnimation.successCheckMark.lottieAnimationView
+
+        errorMessage = FullScreenMessageErrorAnimated(
+            withTitle: title,
+            message: message,
+            animationView: animationView,
+            buttonsTitles: ["CLOSE".localized],
+            buttonsActions: [closeAction],
+            buttonsStyles: [UIButton.ButtonTypes.first],
+            target: self,
+            frame: UIScreen.main.bounds
+        )
+
+        if let errorMessage = errorMessage {
+            if self.navigationController != nil {
+                self.navigationController?.view.addSubview(errorMessage)
+            } else {
+                self.view.addSubview(errorMessage)
+                errorMessage.layer.zPosition = 2
+            }
+            errorMessage.alpha = 1
+        }
+    }
+
+    open func genericHideSuccessView() {
+        errorMessage?.removeFromSuperview(animated: true)
+        errorMessage = nil
+    }
+
+
     open var motionShakeUrl: String = ""
 
     override open func becomeFirstResponder() -> Bool {
         true
+    }
+
+    func hideKeyboardWhenTappedAround() {
+        let tap = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+    }
+
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
     }
 }

@@ -9,7 +9,7 @@ import UIKit
 
 //swiftlint:disable function_default_parameter_at_end
 public enum FullScreenErrorType {
-    case internet, service
+    case internet, service, tooManyRequests
 }
 
 public class FullScreenMessageError: UIView {
